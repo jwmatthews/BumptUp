@@ -1,0 +1,54 @@
+{% extends "jinja/base.html" %}
+{% block content %}
+
+<div class="page_container">
+    <div class="row-fluid">
+        <a class="btn btn-primary btn-medium span4" id="load_users">Refresh Users</a>
+    </div>
+    <div class="row-fluid">
+        <h4 class="span4">Click a user below to load their categories</h4>
+    </div>
+    <div class="row-fluid">
+        <div class="span4">
+            <div id="users-panel"> Users Listings </div>
+            <a class="btn btn-small span4" id="create_new_user_button">Create New User</a>
+        </div>
+        <div class="span8">
+            <div id="categories-panel"> 
+                <div id="categories-content"></div>
+                <a class="btn btn-small span2" id="create_new_category_button">Create New Category</a>
+            </div>
+            <div id="create_user_panel">
+                <form class="create_new_user_form">
+                    <div class="row-fluid" id="input_user_name">
+                        <input type="text" class="firstname span2" placeholder="Enter first name">
+                        <input type="text" class="lastname span2" placeholder="Enter last name">
+                    </div>
+                    <div class="row-fluid">
+                        <input type="text" class="email span6" placeholder="Enter email">
+                    </div>
+                    <div class="row-fluid">
+                        <span class="help-block">Example block-level help text here.</span>
+                    </div>
+                    <button type="submit" class="btn" id="submit_new_user_button">Submit</button>
+                </form>
+            </div>
+            <div id="create_category_panel" data-user-id="" data-user-name="">
+                <form class="create_new_category_form">
+                    <div class="row-fluid" id="input_category_name">
+                        <input type="text" class="name span4" placeholder="Enter category name">
+                    </div>
+                    <div class="row-fluid" id="input_category_description">
+                        <input type="textarea" class="description span8" placeholder="Enter category description">
+                    </div>
+                    <div class="row-fluid">
+                        <span class="help-block">What would you like others to rate you on?</span>
+                    </div>
+                    <button type="submit" class="btn" id="submit_new_category_button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

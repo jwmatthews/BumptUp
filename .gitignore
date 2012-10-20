@@ -25,3 +25,10 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+.idea
+*sqlite3.db
+*debug_logs
+
+.DS_Store
+

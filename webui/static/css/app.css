@@ -1,0 +1,22 @@
+#users-panel {
+    border-color: #000000;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+}
+
+#categories-panel {
+    border-color: #000000;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+}
+
+/* Allow user firstname & lastname to be on same line
+ */
+#includenput_user_name {
+    display: inline;
+}
+
+.footer {
+    float: none;
+    text-align: center;
+}
