@@ -7,4 +7,133 @@ Assumptions:
 Software Requirements:
  - mongoengine
  - networkx
+ - matplotlib
+ - pygexf
+
+
+Notes:
+ matplotlib on OSX required
+  brew install freetype
+  brew install libpng
+  pip install matplotlib
+
+ pygexf required lxml
+  pip install lxml
+
+
+
+Sample output, on 2012 Macbook Pro.
+
+$ time ./graph.py 
+Processed 0 messages
+Processed 5000 messages
+Processed 10000 messages
+Processed 15000 messages
+Processed 20000 messages
+Processed 25000 messages
+Processed 30000 messages
+Processed 35000 messages
+Processed 40000 messages
+Processed 45000 messages
+Processed 50000 messages
+Processed 55000 messages
+Processed 60000 messages
+Processed 65000 messages
+Processed 70000 messages
+Processed 75000 messages
+Processed 80000 messages
+Processed 85000 messages
+Processed 90000 messages
+Processed 95000 messages
+Processed 100000 messages
+Processed 105000 messages
+Processed 110000 messages
+Processed 115000 messages
+Processed 120000 messages
+Processed 125000 messages
+Processed 130000 messages
+Processed 135000 messages
+Processed 140000 messages
+Processed 145000 messages
+Processed 150000 messages
+Processed 155000 messages
+Processed 160000 messages
+Processed 165000 messages
+Processed 170000 messages
+Processed 175000 messages
+Processed 180000 messages
+Processed 185000 messages
+Processed 190000 messages
+Processed 195000 messages
+Processed 200000 messages
+Processed 205000 messages
+Processed 210000 messages
+Processed 215000 messages
+Processed 220000 messages
+Processed 225000 messages
+Processed 230000 messages
+Processed 235000 messages
+Processed 240000 messages
+Processed 245000 messages
+Processed 250000 messages
+Processed 255000 messages
+Processed 260000 messages
+Processed 265000 messages
+Processed 270000 messages
+Processed 275000 messages
+Processed 280000 messages
+Processed 285000 messages
+Processed 290000 messages
+Processed 295000 messages
+Processed 300000 messages
+Processed 305000 messages
+Processed 310000 messages
+Processed 315000 messages
+Processed 320000 messages
+Processed 325000 messages
+Processed 330000 messages
+Processed 335000 messages
+Processed 340000 messages
+Processed 345000 messages
+Processed 350000 messages
+Processed 355000 messages
+Processed 360000 messages
+Processed 365000 messages
+Processed 370000 messages
+Processed 375000 messages
+Processed 380000 messages
+Processed 385000 messages
+Processed 390000 messages
+Processed 395000 messages
+Processed 400000 messages
+Processed 405000 messages
+Processed 410000 messages
+Processed 415000 messages
+Processed 420000 messages
+Processed 425000 messages
+Processed 430000 messages
+Processed 435000 messages
+Processed 440000 messages
+Processed 445000 messages
+Processed 450000 messages
+Processed 455000 messages
+Processed 460000 messages
+Processed 465000 messages
+Processed 470000 messages
+Processed 475000 messages
+Processed 480000 messages
+Processed 485000 messages
+Processed 490000 messages
+Processed 495000 messages
+Processed 500000 messages
+Finished generating graph for 501513 messages in 307.419866085 seconds
+Finished writing graph in GEXF format in 407.545783997 seconds
+All processing took 714.968327999 seconds
+
+real    11m58.730s
+user    11m44.619s
+sys 0m9.894s
+
+
+
 
