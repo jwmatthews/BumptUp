@@ -1,0 +1,10 @@
+Overview:
+  Parse email messages and write out a network graph to parse with Gephi.
+
+Assumptions:
+- enron data has been imported into mongo as 'enron' db name
+
+Software Requirements:
+ - mongoengine
+ - networkx
+
