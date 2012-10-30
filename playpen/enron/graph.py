@@ -30,9 +30,9 @@ def generate_graph(msgs):
     for index, m in enumerate(msgs):
         if index % 5000 == 0:
             print "Processed %s messages"  % (index)
-        source_addr = m.get_from()
-        for target_addr in m.get_to():
-            graph.add_edge(source_addr, target_addr, subject=m.get_subject(), date=m.get_date())
+        source_addr = m.from_str
+        for target_addr in m.to:
+            graph.add_edge(source_addr, target_addr, subject=m.subject, date=m.date)
     return graph
 
 def print_graph(graph):

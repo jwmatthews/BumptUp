@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Define MongoEngine Model for Email set
-from mongoengine import Document, StringField, DictField
+from mongoengine import Document, StringField, DictField, DateTimeField, ListField
 
 import base
 
@@ -14,6 +14,25 @@ def strip_formatting_chars(input, to_strip=None):
 
 class Message(Document):
     meta = {
+        "collection": "messages"
+    }
+
+    body = StringField()
+    subFolder = StringField()
+    filename = StringField()
+    headers = DictField()
+    subject = StringField()
+    date = DateTimeField()
+    to = ListField()
+    from_str = StringField()
+  
+    def __str__(self):
+        return "%s from '%s' to '%s' and a body of %s bytes" % (self.date, self.from_str, self.to, self.subject)
+  
+
+class OriginalMessage(Document):
+    meta = {
+        "db_alias": "enron",
         'collection': 'messages',
         'allow_inheritance': False  # False is needed to read existing data not created with mongoengine
     }
@@ -35,7 +54,7 @@ class Message(Document):
         keys = ["To", "X-To"]
         t = self.__generic_get(keys)
         if not t:
-            return "undisclosed-recipients"
+            return ["undisclosed-recipients"]
         try:
             t = strip_formatting_chars(t)
         except Exception, e:
@@ -64,7 +83,7 @@ class Message(Document):
 
 if __name__ == "__main__":
     base.init()
-    msgs = Message.objects()
+    msgs = OriginalMessage.objects()
     print "Found %s messages" % (msgs.count())
     for x in range(0, 3):
         print "\t%s" % (msgs[x])

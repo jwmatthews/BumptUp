@@ -2,12 +2,13 @@
 
 # Base file responsible for setting up database connections
 from mongoengine.connection import connect
-DB_NAME = "enron"
 DB = None
 
-def init(db_name=None):
+def init():
     global DB
-    if not db_name:
-        db_name = DB_NAME
-    DB = connect("enron")
-    return DB
+    connect("enron", alias="enron")
+    DB = connect("bumptup")
+
+def drop_database():
+    db = connect("bumptup")
+    db.drop_database("bumptup")
